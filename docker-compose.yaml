@@ -1,0 +1,10 @@
+version: '3'
+services:
+  strapi:
+    build: './app'
+    environment:
+    volumes:
+      - ./app:/opt/app
+      - ./app/node_modules:/opt/app/node_modules
+    ports:
+      - '87:1337'

@@ -1,0 +1,20 @@
+FROM node:16
+
+# Let WatchTower know to ignore this container for checking
+# LABEL com.centurylinklabs.watchtower.enable="false"
+
+WORKDIR /app
+
+ENV NODE_ENV development
+
+COPY ./package.json /app
+
+RUN yarn
+
+COPY . .
+
+RUN yarn build
+
+EXPOSE 1337
+
+CMD yarn develop

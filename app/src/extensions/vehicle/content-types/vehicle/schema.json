@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "vehicles",
+  "info": {
+    "singularName": "vehicle",
+    "pluralName": "vehicles",
+    "displayName": "Vehicle",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false,
+    "comment": ""
+  },
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "color": {
+      "type": "string"
+    },
+    "contracts": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "plugin::contract.contract",
+      "mappedBy": "vehicles"
+    },
+    "current_contract": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::contract.contract"
+    }
+  }
+}
